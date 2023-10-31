@@ -37,5 +37,19 @@ class  Post
         FROM 
         ' . $this->table . ' p
          LEFT JOIN categories c ON p.category_id=c.id  ORDER BY p.created_at DESC';
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function read_($id)
+    {
+
+        $query = "SELECT FROM post WHERE id=:'1'";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
     }
 }
