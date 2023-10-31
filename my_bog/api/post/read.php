@@ -27,7 +27,8 @@ $num = $result->rowCount();
 if ($num > 0) {
 
     $post_arr = array();
-    $post_arr['data'] = array();
+ //   $post_arr['data'] = array();
+
 
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -43,7 +44,7 @@ if ($num > 0) {
             'category_name' => $category_name
         );
 
-        array_push($post_arr['data'], $post_item);
+        array_push($post_arr, $post_item);
         echo json_encode($post_arr);
     }
 } else {
