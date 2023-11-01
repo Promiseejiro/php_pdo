@@ -27,14 +27,12 @@ $num = $result->rowCount();
 if ($num > 0) {
 
     $post_arr = array();
- //   $post_arr['data'] = array();
+    //   $post_arr['data'] = array();
 
 
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-
-
         $post_item = array(
             'id' => $id,
             'title' => $title,
@@ -45,8 +43,8 @@ if ($num > 0) {
         );
 
         array_push($post_arr, $post_item);
-        echo json_encode($post_arr);
     }
+    echo json_encode($post_arr);
 } else {
     echo json_encode(array('message' => 'no post found'));
 }
