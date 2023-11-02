@@ -25,5 +25,4 @@ $post_arr = array(
   "category_id" => $post->category_id,
   "category_name" => $post->category_name,
 );
-
 print_r(json_encode($post_arr));
